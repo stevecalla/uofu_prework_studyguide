@@ -17,6 +17,14 @@ function listTopics() {
   topics.map(topic => console.log(topic));
 };
 
+
+//SOLUTION #4: for of loop
+// function listTopics() {
+//   for (const topic of topics) {
+//     console.log(topic);
+//   }
+// };
+
 console.log("Here are the topics we learned in prework:");
 listTopics();
 
