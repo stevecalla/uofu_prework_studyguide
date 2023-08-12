@@ -1,3 +1,8 @@
+const printMessage = document.getElementById('consoleButton');
+
+printMessage.addEventListener('click', listTopics);
+printMessage.addEventListener('click', selectTopic);
+
 const topics = ["HTML", "CSS", "Git", "JavaScript"];
 
 // for (topic in topics) {
@@ -14,9 +19,9 @@ const topics = ["HTML", "CSS", "Git", "JavaScript"];
 
 //SOLUTION #3: map
 function listTopics() {
+  console.log("Here are the topics we learned in prework:");
   topics.map(topic => console.log(topic));
 };
-
 
 //SOLUTION #4: for of loop
 // function listTopics() {
@@ -25,10 +30,14 @@ function listTopics() {
 //   }
 // };
 
-console.log("Here are the topics we learned in prework:");
-listTopics();
+// listTopics();
 
-function selectTopic(topic) {
+function selectTopic() {
+  let randomNumber = getRandomInt(topics.length);
+  let topic = topics[randomNumber];
+  
+  console.log("Which topic should we study first?");
+
   if (topic === 'HTML') {
     console.log("Let's study HTML!");
   } else if (topic === 'CSS') {
@@ -45,8 +54,3 @@ function selectTopic(topic) {
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
-
-let randomNumber = getRandomInt(topics.length);
-
-console.log("Which topic should we study first?")
-selectTopic(topics[randomNumber]);
